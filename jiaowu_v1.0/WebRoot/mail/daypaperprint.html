@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+   <meta charset="utf-8" />
+   <title>学习进度日报</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <meta content="" name="description" />
+   <meta content="Mosaddek" name="author" />
+   	<script src="${url}/js/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="${url}/js/jquery.PrintArea.js"></script>
+   <style>
+     /*
+                   初始化    
+     */
+       html{color:#000;background:#FFF;}
+       body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+       table{border-collapse:collapse;border-spacing:0;}
+       fieldset,img{border:none;}
+       address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+       li{list-style:none;}caption,th{text-align:left;}
+       h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+       q:before,q:after{content:”;}
+       abbr,acronym{border:none;font-variant:normal;}
+       sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}
+      	input,button,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+       input,button,textarea,select{*font-size:100%;} 
+       legend{color:#000;}
+       del,ins{text-decoration:none;}
+       small{font-size:100%;}
+      /*
+        css
+     */
+      h3,h6{color:#fff}
+      h3{font-weight: 900;font-size: 20px;margin-bottom: 6px}
+      h6{font-size: 14px}
+      .container{background:#ededed;font-size: 13px;color:#504e4f;font-family: "微软雅黑","serif"}
+      header{background:#4a8bc2;height:60px;padding:10px}
+      section{margin:20px 0}
+      .secdiv{width:90%;margin:0 auto 30px;padding:10px;text-align: left;}
+      .secname{font-size:16px}
+      .seccont{margin-top:20px;font-size:14px}
+      .sectioncont{width:90%;margin:0 auto}
+      .coursegl{background:#fff;width:45%;float: left;padding:15px}
+      .studentbx{background:#fff;width:45%;float: right;padding:15px}
+      .coursestudent{background:#dff1ff;color:#3a87ad;padding:2px 4px;font-size: 15px;padding:10px}
+      .courseone{margin:10px 0 10px 10px;color:#888}
+      .shoukecont{margin:20px 0;background:#fff;padding:15px}
+      .textarea{background:#f5f5f5;color:#888;border-radius:5px;padding:5px;margin-top:10px;min-height:40px;height:50px;overflow-y:auto}
+      .floatleft{float: left;}
+      .label{width:100px}
+      .zcourse{width:60%;height:17px;background:#ededed}
+      .zkcourse{background:#5eb95e;height:100%;float: left}
+      .yscourse{background:#5eb95e;height:100%;float: left}
+      .btn{padding:4px 8px;background-color:transparent;color:#fff;border:1px solid #fff;cursor: pointer;border-radius: 3px}
+      .btn:hover{background-color:#fff;color:#888}
+      footer{background:#4a8bc2;height:60px;padding:10px}
+      .ff{
+	    padding: 4px 8px;
+	    border: 1px solid #fff;
+	    cursor: pointer;
+	    border-radius: 3px;
+      }
+   </style>
+</head>
+<body>
+	<div class="printdiv" style="float: right;width:10%;">
+	  		<input type="button"  class="secname ff btn-outline btn-info" value="打印此页" id="print" style="margin-top:20px"/> 
+	</div> 
+  <div class="container">
+   <header>
+        <img alt="logo" src="/images/logo/logo_menu.png" width='300'>
+        <div style="width:400px;margin:-50px auto;text-align: center;">
+	        <h3>学习进度日报</h3>
+	        <h6>${plancourse_time}</h6>
+        </div>
+    </header>
+    <section>
+        <div class="secdiv">
+           <div class="secname">Hi,亲爱的${corderreal_name}同学家长您好：</div>
+           <div class="seccont">以下是今日${plancourse_name}课程上课情况，具体内容如下：</div>
+        </div>
+        <div class="sectioncont">
+           <div class="coursegl">
+              <div class="coursestudent">课时概览</div>
+              <div class="courseone">${corderreal_name}同学</div>
+              <div class="courseone">
+                  <div class="floatleft label">总课时：</div> 
+                  <div class="floatleft zcourse">
+                       <div class="zkcourse" style="width:100%">
+                       </div>
+                  </div>
+                  <div class="floatleft" style="margin-left:10px">${corderallhour}课时</div>
+                  <div style="clear: both;"></div>
+              </div>
+              <div class="courseone">
+                  <div class="floatleft label">已上：</div> 
+                  <div class="floatleft zcourse">
+                       <div class="zkcourse" style="width:${usedhourpx}%">
+                       </div>
+                  </div>
+                  <div class="floatleft" style="margin-left:10px">${usedHours}课时</div>
+                  <div style="clear: both;"></div>
+              </div>
+              <div class="courseone">
+                  <div class="floatleft label">剩余：</div> 
+                  <div class="floatleft zcourse">
+                       <div class="zkcourse" style="width:${lefthourpx}%">
+                       </div>
+                  </div>
+                  <div class="floatleft" style="margin-left:10px">${leftHours}课时</div>
+                  <div style="clear: both;"></div>
+              </div>
+           </div>
+           <div class="studentbx">
+              <div class="coursestudent">学术表现</div>
+              <div class="courseone">注意力：${tgATTENTION}</div>
+              <div class="courseone">理解力：${tgUNDERSTAND}</div>
+              <div class="courseone">学习态度：${tgSTUDYMANNER}</div>
+              <div class="courseone">作业情况：${tgSTUDYTASK}</div>
+           </div>
+           <div style="clear: both;"></div>
+        <div class="shoukecont">
+           <div class="coursestudent">本次课程</div>
+           <div class="textarea">${tgCOURSE_DETAILS}</div>
+        </div>
+        <div class="shoukecont">
+           <div class="coursestudent">本次作业</div>
+           <div class="textarea">${tgHOMEWORK}</div>
+        </div>
+        <div class="shoukecont">
+           <div class="coursestudent">上次作业问题（Homework Assigned）</div>
+           <div class="textarea">${tgquestion}</div>
+        </div>
+        <div class="shoukecont">
+           <div class="coursestudent">建议/方案（What to  Prepare for Next Session）</div>
+           <div class="textarea">${tgmethod}</div>
+        </div>
+        </div>
+    </section>
+    <footer>
+       <div style="width:580px;margin:10px auto 0;color:#fff">
+        <div style="margin-bottom: 10px;text-align: center;">Hi，如果您在对我们的服务遇到问题，欢迎向我们咨询！</div>
+        <div style="margin-bottom: 10px;text-align: center;">电话：${tel}&nbsp;&nbsp;&nbsp;邮件：${email}&nbsp;&nbsp;&nbsp;网站：${web}</div>
+       </div>
+    </footer> 
+   </div> 
+</body>
+<script>
+	$(document).ready(function(){
+		$(".printdiv").click(function(){
+			$(".container").printArea();
+		});
+	}); 
+	</script>
+</html>
