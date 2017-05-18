@@ -3,8 +3,10 @@
 
 官网:[http://www.yunjiaowu.cn/](http://www.yunjiaowu.cn/)
 
-账号:admin@yunjiaowu.cn
-密码:111111
+
+系统账号:admin@yunjiaowu.cn
+
+系统密码:111111
 ***
 
 **技术框架**
