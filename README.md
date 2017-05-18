@@ -9,7 +9,7 @@
 
 **技术框架**
 
-* 核心框架：jfinal
+* 核心框架：JFinal3.0
 * JS框架：jQuery
 * 前端：H+v4.1.0/Bootstrap3.3.6/Html5+CSS3/
 * 响应式设计/layUI
