@@ -18,7 +18,8 @@
 * IDE:eclipse，idea
 * DB:Mysql5.5
 * JDK:JAVA 7
-* tomcat:tomcat 7.0.68以上  
+* tomcat:tomcat 7.0.68以上
+  
 *** 
 
  **项目介绍**    
