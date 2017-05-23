@@ -5,29 +5,6 @@
 官网:[http://www.yunjiaowu.cn/](http://www.yunjiaowu.cn/)
 
 
-系统账号:admin#yunjiaowu.cn(#换@）
-
-系统密码:111111
-
-**技术框架**
-
-* 核心框架：JFinal3.0
-* JS框架：jQuery
-* 前端：H+v4.1.0/Bootstrap3.3.6/Html5+CSS3/
-* 响应式设计/layUI
-* 数据库：MySQL5.5
-
-
-**开发环境**
-建议开发者使用以下环境，这样避免版本带来的问题
-
-* IDE:eclipse，idea
-* DB:Mysql5.5
-* JDK:JAVA 7
-* tomcat:tomcat 7.0.68以上 
-  
-*** 
-
 **项目介绍**    
     在我们的日常教学活动中，动态要素是教师、学生及心理环境，人的要素——教师和学生是控制和制约教学系统进行的关键因素，在这个网络智能的时代拥有一款优秀的教务系统是非常值得的选择。因为教学系统是物的要素，是师生互动交流的载体，而心理环境是使教务系统中人和物的要素得以有机运作的文化与情感支撑，那不妨用一下摩码创想（北京）科技有限公司（以下简称摩码创想）提供的开源版云教务系统。
 
@@ -43,10 +20,34 @@
     
 希望能在实际的应用中帮助到大家，谢谢大家的支持。
 ***
-云教务登录页面
+云教务登录页面展示
 ![login的页面](https://git.oschina.net/uploads/images/2017/0517/114352_18c43d36_1353172.png "login的页面 ")
-云教务的主页面
+云教务的主页面展示
 ![云教务教学](https://git.oschina.net/uploads/images/2017/0517/114118_54384c49_1353172.png "云教务教学")
+***
+**技术框架**
+
+* 核心框架：JFinal3.0 官网:[http://www.jfinal.com/](http://www.jfianl.com/)
+* JS框架：jQuery
+* 前端：H+v4.1.0/Bootstrap3.3.6/Html5+CSS3/
+* 响应式设计/layUI
+* 数据库：MySQL5.5
+
+项目基于JFinal开源社区JFinalUIBV1.0(https://www.oschina.net/p/jfinaluib)版本开发，参考了权限设计，重写了部分代码
+
+**开发环境**
+建议开发者使用以下环境，这样避免版本带来的问题
+
+* IDE:eclipse，idea
+* DB:Mysql5.5
+* JDK:JAVA 7
+* tomcat:tomcat 7.0.68以上 
+
+**登录系统账号**
+管理员账号:admin#yunjiaowu.cn(#换@）
+
+管理员密码:111111
+
 ***
 【使用声明】 
 
