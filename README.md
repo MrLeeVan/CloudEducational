@@ -33,8 +33,7 @@
 * 响应式设计/layUI
 * 数据库：MySQL5.5
 
-项目基于JFinal开源社区JFinalUIBV1.0(https://www.oschina.net/p/jfinaluib)版本开发，参考了权限设计，重写了部分代码
-
+项目权限部分基于JFinal开源社区[JFinalUIBV1.0](https://www.oschina.net/p/jfinaluib)版本开发
 **开发环境**
 建议开发者使用以下环境，这样避免版本带来的问题
 
