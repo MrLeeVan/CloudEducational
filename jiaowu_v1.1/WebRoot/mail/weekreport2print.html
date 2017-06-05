@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>周报</title>
+<link href="${url}/css/rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
+<link href="${url}/css/rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+</head>
+<body>
+<div  class="printdiv"style="display:none;float:right;width:54%" >
+	<input type="button" class="ff" value="打印此页" id="print" /> 
+</div>
+<!-- 模版内容  开始 -->
+<div class="container">
+<style type="text/css">
+<!--
+body table tr td {
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-bottom-color: #000;
+	border-left-color: #000;
+}
+
+#border {
+	background-color: #FFF;
+	width: 715px;
+}
+
+.right-1 {
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #000;	
+}
+
+.not_bottom td{
+	border-bottom-width: 0px;
+}
+
+.not_lerf{
+	border-left-width: 0px;
+}
+
+.title1 {
+ 	background: rgb(99, 184, 108) none repeat scroll 0 0;
+    padding: 0 5.4pt;
+	color: rgb(204, 232, 207);
+}
+
+.title2 {
+ 	background: rgb(159, 211, 164) none repeat scroll 0 0;
+    padding: 0 5.4pt;
+}
+
+.line-height_100{
+	line-height: 100%;
+}
+-->
+</style>
+<table align="center" id="border" cellspacing="0" cellpadding="0" style="TABLE-LAYOUT: fixed">
+  <tr>
+    <td width="100%" class="not_lerf">
+	    <img src="${url}/images/sendmail/logo_2.png" alt="" name="" width="715" height="168" />
+    </td>
+  </tr>
+  <tr>
+    <td class="title1 right-1"><p ><strong>BASIC INFORMATION</strong></p></td>
+  </tr>
+  <tr>
+    <td><table width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="25%" class="not_lerf title2"><p >Student Name:</p></td>
+        <td width="25%"><p >${studentname}</p></td>
+        <td width="25%" class="title2"><p >Course:</p></td>
+        <td width="25%" class="right-1" style="line-height: 1;"><p >${coursename}</p></td>
+      </tr>
+      <tr>
+        <td class="not_lerf title2"><p >Student No.:</p></td>
+        <td>&nbsp;</td>
+        <td class="title2"><p >Teacher:</p></td>
+        <td class="right-1" style="line-height: 1;">${teachername}</td>
+      </tr>
+      <tr>
+        <td class="not_lerf title2"><p >Student Grade:</p></td>
+        <td>&nbsp;</td>
+        <td class="title2"><p  >Date of Report:</p></td>
+        <td class="right-1">${appointment}</td>
+      </tr>
+      <tr class="not_bottom">
+        <td class="not_lerf title2"><p>Current School:</p></td>
+        <td>${school}</td>
+        <td class="title2">&nbsp;</td>
+        <td class="right-1">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="title1 right-1"><p  ><strong>TAUGHT CONTENT</strong></p></td>
+  </tr>
+  <tr>
+    <td><table width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="50%" class="not_lerf title2"><p >Topics Covered From: </p></td>
+        <td width="50%" class="title2 right-1"><p  >Topics to be Covered:</p></td>
+      </tr>
+      <tr class="not_bottom">
+        <td class="not_lerf line-height_100">
+        	<div>
+             ${teacherfeedback}
+            </div>
+         </td>
+        <td class="right-1">
+        	<div>
+             ${question}
+            </div>
+        </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="title1 right-1"><p  ><strong>ACADEMIC PERFORMANCE:</strong></p></td>
+  </tr>
+  <tr>
+    <td><table width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="38%" class="not_lerf title2"><p>Mastery of Course Content </p></td>
+        <td width="62%" class="title2 right-1"><input class="ionrange" value="${attention}"></td>
+      </tr>
+      <tr class="not_bottom">
+        <td class="not_lerf title2"><p >Class Participation and Attitude </p></td>
+        <td class="title2 right-1"><input class="ionrange" value="${studymanner}"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="title1 right-1"><p ><strong>COMMENTS:</strong></p></td>
+  </tr>
+  <tr>
+    <td class="line-height_100 right-1" style="WORD-WRAP: break-word">${method}</td>
+  </tr>
+  <tr>
+    <td class="title1 right-1"><p ><strong>RECOMMENDATIONS:</strong></p></td>
+  </tr>
+  <tr>
+    <td class="line-height_100 right-1" style="WORD-WRAP: break-word">${homework}</td>
+  </tr>
+  
+</table>
+</div>
+<!-- 模版内容  结束 -->
+<script type="text/javascript" src="${url}/js/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="${url}/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+<script type="text/javascript" src="${url}/js/jquery.PrintArea.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".ionrange").ionRangeSlider({
+	    values: [
+	        "Poor", "Unsatisfactory", "Satisfactory", "Good", "Excellent"
+	    ],
+	    type: 'single',
+	    hasGrid: true
+	});
+	
+	$(".printdiv").click(function(){
+		$(".container").printArea();
+	});
+});
+</script>
+</body>
+</html>
